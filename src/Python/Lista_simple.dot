@@ -1,0 +1,14 @@
+digraph ListaSimple{
+label = "Lista Simple"
+
+	Node0[label = "a"];
+	Node1[label = "b"];
+	Node2[label = "c"];
+	Node3[label = "e"];
+	Node4[label = "f"];
+
+	Node0 -> Node1;
+	Node1 -> Node2;
+	Node2 -> Node3;
+	Node3 -> Node4;
+}
