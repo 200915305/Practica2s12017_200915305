@@ -1,8 +1,0 @@
-digraph Matriz{
-label = "Matriz"
-
-	Node0[label = "A"];
-
-	Node0[label = "google.com"];
-
-}

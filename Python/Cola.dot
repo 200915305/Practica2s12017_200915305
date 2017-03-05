@@ -1,10 +1,8 @@
 digraph Cola{
 label = "Cola"
 
-	Node0[label = "8"];
-	Node1[label = "7"];
-	Node2[label = "6"];
+	Node0[label = ""];
+	Node1[label = ""];
 
 	Node0 -> Node1;
-	Node1 -> Node2;
 }
