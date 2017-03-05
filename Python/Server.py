@@ -2,7 +2,7 @@ from flask import Flask, request, Response
 import subprocess
 app = Flask("Practica2")
 
-
+#**************************Nodo Lista Simple...
 class Nodo:
 
     def __init__(self, info):
@@ -11,7 +11,7 @@ class Nodo:
 
 
 
-# Clase Lista
+#**************************Lista Simple...
 class ListaD:
 
 
@@ -56,6 +56,7 @@ class ListaD:
     def Buscar(self,elem):
         nodo=self.primeroL
         print "************Mostrar Lista*************"
+
         while nodo!=None:
             if nodo.Info ==elem:
                 print "elemento>>>",nodo.Info
@@ -71,6 +72,7 @@ class ListaD:
 
     def Gragficar(self):
         Archivo = open('C:\Users\Administrador\Desktop\Python\Lista_simple.dot', 'w')
+
         Grafo_dot = "digraph ListaSimple{\nlabel = \"Lista Simple\"\n\n"
         nodo = self.primeroL
 
@@ -94,6 +96,8 @@ class ListaD:
              '-Tpng', '-Gcharset=utf8'])
 
 lista = ListaD()
+
+"""""
 lista.insertar("a")
 lista.insertar("b")
 lista.insertar("c")
@@ -101,19 +105,20 @@ lista.insertar("d")
 lista.insertar("e")
 lista.insertar("f")
 lista.mostrar()
-lista.eliminar(3)
+lista.eliminar(4)
 lista.mostrar()
 lista.Buscar("c")
 lista.Gragficar()
+"""""
 
-
+#*******************************Nodo Cola...
 class NodoCola():
     def __init__(self, dato):
         self.dato=dato
         self.sig=None
 
 
-
+#*********************************Cola...
 class Cola():
     def __init__(self):
         self.primero=None
@@ -135,8 +140,10 @@ class Cola():
         while aux.sig != self.ultimo:
             aux=aux.sig
         print "salio>>",aux.sig.dato
+        aux2=aux.sig.dato
         aux.sig=None
         self.ultimo=aux
+        return aux2
 
     def mostrarCola(self):
         aux=self.primero
@@ -173,6 +180,7 @@ class Cola():
 
 
 cola=Cola()
+"""""
 cola.AgregarCola(1)
 cola.AgregarCola(2)
 cola.AgregarCola(3)
@@ -191,14 +199,14 @@ cola.EliminarUltimo()
 cola.mostrarCola()
 cola.EliminarUltimo()
 cola.mostrarCola()
-
-
+"""
+#************************************Nodo Pila....
 class NodoPila():
     def __init__(self,dato):
         self.dato=dato
         self.sigP=None
 
-
+#************************************Pila....
 class Pila():
     def __init__(self):
         self.primeroP=None
@@ -225,7 +233,9 @@ class Pila():
             aux=aux.sigP
 
     def EliminarPrimero(self):
+        aux=self.primeroP
         self.primeroP=self.primeroP.sigP
+        return aux.dato
 
     def GraficarPila(self):
         Archivo = open('C:\Users\Administrador\Desktop\Python\Pila.dot', 'w')
@@ -253,6 +263,7 @@ class Pila():
 
 
 pila = Pila()
+"""""
 pila.AgreparPila(1)
 pila.AgreparPila(2)
 pila.AgreparPila(3)
@@ -264,18 +275,230 @@ pila.AgreparPila(8)
 pila.GraficarPila()
 pila.MostrarPila()
 pila.EliminarPrimero()
-pila.GraficarPila()
 pila.MostrarPila()
-pila.EliminarPrimero()
-pila.MostrarPila()
+"""
+#********************************************Matriz Dispersa...
+
+###******************************************NodoDominio y Lista Dominio ...
+class NodoDominio():
+    def __init__(self,dominio,siguienteD=None,anteriorD=None,arribaD=None,abajoD=None):
+        self.dominio=dominio
+        self.siguienteD=siguienteD
+        self.anteriorD=anteriorD
+        self.arribaD=arribaD
+        self.abajoD=abajoD
+        self.primeroObjeto=NodoMatriz
+        self.ultimoObjeto=NodoMatriz
+
+class Dominio():
+    def __init__(self):
+        self.primeroDominio=None
+        self.ultimoDominio=None
+
+    def vaciaDominio(self):
+        return self.primeroDominio==None
+
+    def AgreparDominio(self,dato):
+        if self.vaciaDominio() == True:
+            self.primeroDominio = self.ultimoDominio = NodoDominio(dato)
+        else:
+            aux = NodoDominio(dato)
+            aux.siguienteD = self.primeroDominio
+            self.primeroDominio = aux
+
+
+
+    def MostrarDominio(self):
+        aux=self.primeroDominio
+        print "************Mostrar Dominios*************"
+        while aux != None:
+            print aux.dato
+            aux=aux.siguienteD
+
+###*****************************************NodoLetra y Clase de la Lista de Letras...
+class NodoLetra():
+    def __init__(self,letra,siguienteL=None,anteriorL=None,arribaL=None,abajoL=None):
+        self.letra=letra
+        self.siguienteL=siguienteL
+        self.arribaL=arribaL
+        self.abajoL=abajoL
+        self.primeroObjeto=NodoMatriz
+        self.ultimoObjeto=NodoMatriz
+
+class Letra():
+    def __init__(self):
+        self.primeroLetra=None
+        self.ultimoLetra=None
+
+    def vaciaLetra(self):
+        return self.primeroLetra==None
+
+    def AgreparLetra(self,dato):
+        if self.vaciaLetra() == True:
+            self.primeroLetra = self.ultimoLetra = NodoLetra(dato)
+        else:
+            aux = NodoLetra(dato)
+            aux.siguienteL = self.primeroLetra
+            self.primeroLetra = aux
+
+
+
+    def MostrarLetra(self):
+        aux=self.primeroLetra
+        print "************Mostrar Lista de Letras*************"
+        while aux != None:
+            print aux.dato
+            aux=aux.siguienteL
+
+
+
+
+###*****************************************NodoMatriz...
+class NodoMatriz():
+     def __init__(self, objeto, siguienteM=None, anteriorM=None, arribaM=None, abajoM=None):
+            self.objeto = objeto
+            self.siguienteM = siguienteM
+            self.anteriorM = anteriorM
+            self.arribaM = arribaM
+            self.abajoM = abajoM
+
+###****************************************Matriz Dispersa ...
+class Matriz():
+    def __init__(self):
+        self.primeroM=None
+        self.ultimoM=None
+        self.primeroL=None
+        self.ultimoL=None
+        self.primeroD=None
+        self.ultimoD=None
+
+    def vacia(self):
+        return self.primeroD==self.primeroL==None
+
+    def AgregarMatriz(self,letra,dominio,objeto):
+        if self.vacia()==True:
+            nuevo=NodoMatriz(objeto)
+            self.primeroM=self.ultimoM=nuevo
+            self.primeroL=self.ultimoL=NodoLetra(letra)
+            self.primeroD=self.ultimoD=NodoDominio(dominio)
+            self.primeroL.arribaL=nuevo
+            self.primeroD.abajoD=nuevo
+
+
+
+    def GraficarMatriz(self):
+        Archivo = open('C:\Users\Administrador\Desktop\Python\Matriz.dot', 'w')
+        Grafo_dot = "digraph Matriz{\nlabel = \"Matriz\"\n\n"
+
+        #--------------Lista de las Letras--------
+        temp = self.primeroL
+        Indice = 0
+        while (temp != None):
+            Grafo_dot += "\tNode" + str(Indice) + "[label = \"" + str(temp.letra) + "\"];\n"
+            temp = temp.siguienteL
+            Indice = Indice + 1
+        Grafo_dot += "\n"
+        temp = self.primeroL
+        Indice = 0
+        while (temp.siguienteL != None):
+            Grafo_dot += "\tNode" + str(Indice) + " -> Node" + str(Indice + 1) + ";\n"
+            temp = temp.siguienteL
+            Indice = Indice + 1
+        #---------------Lista de los Dominiios----------
+
+        temp2 = self.primeroD
+        Indice2 = 3
+        while (temp2 != None):
+            Grafo_dot += "\tNode" + str(Indice) + "[label = \"" + str(temp2.dominio) + "\"];\n"
+            temp2 = temp2.siguienteD
+            Indice2 = Indice2 + 1
+        Grafo_dot += "\n"
+        temp2 = self.primeroD
+        Indice2 = 0
+        while (temp2.siguienteD != None):
+            Grafo_dot += "\tNode" + str(Indice2) + " -> Node" + str(Indice2 + 1) + ";\n"
+            temp2 = temp2.siguienteD
+            Indice2 = Indice2 + 1
+
+
+
+        Grafo_dot += "}"
+        Archivo.write(Grafo_dot)
+        Archivo.close()
+        subprocess.call(
+            ['dot', 'C:\Users\Administrador\Desktop\Python\Matriz.dot', '-o',
+             'C:\Users\Administrador\Desktop\Python\Matriz.png',
+             '-Tpng', '-Gcharset=utf8'])
+
+
+
+
+matriz=Matriz();
+matriz.AgregarMatriz("A","google.com","Ana")
+matriz.AgregarMatriz("B","google.com","Alex")
+matriz.GraficarMatriz()
+
+
+
+
+
+
+
+#********************************************Consumir Servidor....
+
 
 @app.route('/AgregarLista', methods=['POST'])
 def AgregarLista():
     parametro = str(request.form['dato'])
     lista.insertar(str(parametro))
-    lista.mostrar()
+    lista.Gragficar()
     return "Se Agrego " + str(parametro) + "!"
 
+
+@app.route('/EliminarLista', methods=['POST'])
+def EliminarLista():
+    parametro = str(request.form['indice'])
+    lista.eliminar(int(parametro))
+    lista.Gragficar()
+    return "Se Elimino " + str(parametro) + "!"
+
+@app.route('/BuscarLista', methods=['POST'])
+def BuscarLista():
+    parametro = str(request.form['buscar'])
+    dato= lista.Buscar(str(parametro))
+    if dato==None:
+        return "El Dato no se Encontro en la Lista"
+    else:
+        return "El Dato q se Encontro en la Lista es>>>"+dato
+    lista.Gragficar()
+
+@app.route('/AgregarCola', methods=['POST'])
+def AgregarCola():
+    parametro = str(request.form['datoc'])
+    cola.AgregarCola(str(parametro))
+    cola.GragficarCola()
+    return "Se Agrego a la Cola " + str(parametro) + "!"
+
+@app.route('/QuitarCola', methods=['POST'])
+def QuitarCola():
+    parametro = str(request.form['cola'])
+    cola2=cola.EliminarUltimo()
+    cola.GragficarCola()
+    return "El dato que salio de la Cola es>>>> " + cola2 + "!"
+
+@app.route('/AgregarPila', methods=['POST'])
+def AgregarPila():
+    parametro = str(request.form['pila'])
+    pila.AgreparPila(str(parametro))
+    pila.GraficarPila()
+    return "Se Agrego a la Pila " + str(parametro) + "!"
+
+@app.route('/SacarPila', methods=['POST'])
+def SacarPila():
+    parametro = str(request.form['pila'])
+    pila2=pila.EliminarPrimero()
+    pila.GraficarPila()
+    return "El dato que salio de la Pila es>>>> " + pila2 + "!"
 
 @app.route("/")
 def hellof():
