@@ -491,8 +491,8 @@ class Nombres(object):
 
         else:
 
-            letraInsertar = insertar[:1]
-            letraInsertar = ord(letraInsertar)
+            InsertarLetra = insertar[:1]
+            InsertarLetra = ord(InsertarLetra)
 
             agregado = False
             Auxiliar = self.primero
@@ -501,7 +501,7 @@ class Nombres(object):
                 letracomparar = Auxiliar.getValor()[:1]
                 letracomparar = ord(letracomparar)
 
-                if letraInsertar > letracomparar:
+                if InsertarLetra > letracomparar:
                     Auxiliar = Auxiliar.getSiguiente()
                 else:
                     if Auxiliar == self.primero:
@@ -614,8 +614,8 @@ class Dominio(object):
 
         else:
 
-            letraInsertar = insertar[:1]
-            letraInsertar = ord(letraInsertar)
+            InsertarLetra = insertar[:1]
+            InsertarLetra = ord(InsertarLetra)
 
             agregado = False
             Auxiliar = self.primero
@@ -624,7 +624,7 @@ class Dominio(object):
                 letracomparar = Auxiliar.getValor()[:1]
                 letracomparar = ord(letracomparar)
 
-                if letraInsertar > letracomparar:
+                if InsertarLetra > letracomparar:
                     Auxiliar = Auxiliar.getSiguiente()
                 else:
                     if Auxiliar == self.primero:
@@ -754,8 +754,8 @@ class Letras(object):
 
         else:
 
-            letraInsertar = insertar[:1]
-            letraInsertar = ord(letraInsertar)
+            InsertarLetra = insertar[:1]
+            InsertarLetra = ord(InsertarLetra)
 
             agregado = False
             Auxiliar = self.primero
@@ -764,7 +764,7 @@ class Letras(object):
                 letracomparar = Auxiliar.getValor()[:1]
                 letracomparar = ord(letracomparar)
 
-                if letraInsertar > letracomparar:
+                if InsertarLetra > letracomparar:
                     Auxiliar = Auxiliar.getAbajo()
                 else:
                     if Auxiliar == self.primero:
@@ -855,28 +855,28 @@ class Letras(object):
 
 class Matriz(object):
     def __init__(self):
-        self.listaletra = None
-        self.listadominio = None
+        self.ListaL = None
+        self.ListaD = None
         self.listanombres = None
         self.tamano = 0
 
 #***********************************************Incertar en la Matriz....
     def insertar(self, letra, dominio, objeto):
         if self.tamano == 0:
-            self.listaletra = Letras()
-            self.listadominio = Dominio()
+            self.ListaL = Letras()
+            self.ListaD = Dominio()
 
-            Listanombres = Nombres()
+            ListaN = Nombres()
 
-            Listanombres.insertar(objeto)
+            ListaN.insertar(objeto)
 
-            nodo = NodoMatriz(Listanombres, letra, dominio)
+            nodo = NodoMatriz(ListaN, letra, dominio)
 
-            self.listadominio.insertar(dominio)
-            self.listaletra.insertar(letra)
+            self.ListaD.insertar(dominio)
+            self.ListaL.insertar(letra)
 
-            auxLetra = self.listaletra.buscar(letra)
-            auxDominio = self.listadominio.buscar(dominio)
+            auxLetra = self.ListaL.buscar(letra)
+            auxDominio = self.ListaD.buscar(dominio)
 
             auxLetra.setSiguiente(nodo)
             auxDominio.setAbajo(nodo)
@@ -888,11 +888,11 @@ class Matriz(object):
 
         elif self.tamano > 0:
 
-            if self.listaletra.buscar(letra) != None and self.listadominio.buscar(dominio) != None:
+            if self.ListaL.buscar(letra) != None and self.ListaD.buscar(dominio) != None:
 
                 if self.Comparar(letra, dominio) == True:
 
-                    nodoauxD = self.listadominio.buscar(dominio)
+                    nodoauxD = self.ListaD.buscar(dominio)
                     nodoaux = nodoauxD
 
                     while nodoaux != None:
@@ -908,14 +908,14 @@ class Matriz(object):
 
 
                 else:
-                    nodoauxD = self.listadominio.buscar(dominio)
+                    nodoauxD = self.ListaD.buscar(dominio)
                     nodoaux = nodoauxD.getAbajo()
 
-                    Listanombres = Nombres()
+                    ListaN = Nombres()
 
-                    Listanombres.insertar(objeto)
+                    ListaN.insertar(objeto)
 
-                    nodo = NodoMatriz(Listanombres, letra, dominio)
+                    nodo = NodoMatriz(ListaN, letra, dominio)
                     letrainsertar = letra[:1]
                     letrainsertar = ord(letrainsertar)
 
@@ -941,7 +941,7 @@ class Matriz(object):
                         nodo.setArriba(nodoaux)
                         nodoaux.setAbajo(nodo)
 
-                    nodoauxL = self.listaletra.buscar(letra)
+                    nodoauxL = self.ListaL.buscar(letra)
                     nodoaux2 = nodoauxL.getSiguiente()
 
                     letrainsertar = dominio[:1]
@@ -972,17 +972,17 @@ class Matriz(object):
                     self.tamano = self.tamano + 1
 
 
-            elif self.listadominio.buscar(dominio) == None and self.listaletra.buscar(letra) != None:
+            elif self.ListaD.buscar(dominio) == None and self.ListaL.buscar(letra) != None:
 
-                self.listadominio.insertar(dominio)
+                self.ListaD.insertar(dominio)
 
-                nodoauxL = self.listaletra.buscar(letra)
+                nodoauxL = self.ListaL.buscar(letra)
 
-                Listanombres = Nombres()
+                ListaN = Nombres()
 
-                Listanombres.insertar(objeto)
+                ListaN.insertar(objeto)
 
-                nodo = NodoMatriz(Listanombres, letra, dominio)
+                nodo = NodoMatriz(ListaN, letra, dominio)
                 nodoaux2 = nodoauxL.getSiguiente()
 
                 letrainsertar = dominio[:1]
@@ -1010,7 +1010,7 @@ class Matriz(object):
                     nodo.setAnterior(nodoaux2)
                     nodoaux2.setSiguiente(nodo)
 
-                auxDominio = self.listadominio.buscar(dominio)
+                auxDominio = self.ListaD.buscar(dominio)
 
                 auxDominio.setAbajo(nodo)
 
@@ -1020,18 +1020,18 @@ class Matriz(object):
 
 
 
-            elif self.listadominio.buscar(dominio) != None and self.listaletra.buscar(letra) == None:
+            elif self.ListaD.buscar(dominio) != None and self.ListaL.buscar(letra) == None:
 
-                self.listaletra.insertar(letra)
+                self.ListaL.insertar(letra)
 
-                nodoauxD = self.listadominio.buscar(dominio)
+                nodoauxD = self.ListaD.buscar(dominio)
                 nodoaux = nodoauxD.getAbajo()
 
-                Listanombres = Nombres()
+                ListaN = Nombres()
 
-                Listanombres.insertar(objeto)
+                ListaN.insertar(objeto)
 
-                nodo = NodoMatriz(Listanombres, letra, dominio)
+                nodo = NodoMatriz(ListaN, letra, dominio)
 
                 letrainsertar = letra[:1]
                 letrainsertar = ord(letrainsertar)
@@ -1058,26 +1058,26 @@ class Matriz(object):
                     nodo.setArriba(nodoaux)
                     nodoaux.setAbajo(nodo)
 
-                auxLetra = self.listaletra.buscar(letra)
+                auxLetra = self.ListaL.buscar(letra)
                 auxLetra.setSiguiente(nodo)
 
                 nodo.setAnterior(auxLetra)
 
                 self.tamano = self.tamano + 1
 
-            elif self.listadominio.buscar(dominio) == None and self.listaletra.buscar(letra) == None:
+            elif self.ListaD.buscar(dominio) == None and self.ListaL.buscar(letra) == None:
 
-                self.listadominio.insertar(dominio)
-                self.listaletra.insertar(letra)
+                self.ListaD.insertar(dominio)
+                self.ListaL.insertar(letra)
 
-                auxLista = self.listaletra.buscar(letra)
-                auxDominio = self.listadominio.buscar(dominio)
+                auxLista = self.ListaL.buscar(letra)
+                auxDominio = self.ListaD.buscar(dominio)
 
-                Listanombres = Nombres()
+                ListaN = Nombres()
 
-                Listanombres.insertar(objeto)
+                ListaN.insertar(objeto)
 
-                nodo = NodoMatriz(Listanombres, letra, dominio)
+                nodo = NodoMatriz(ListaN, letra, dominio)
 
                 auxLista.setSiguiente(nodo)
                 auxDominio.setAbajo(nodo)
@@ -1088,13 +1088,13 @@ class Matriz(object):
 
  #****************************************************Grafiar Matriz....
     def GraficarMatriz(self):
-        f = open("C:\graficas\Matriz.txt", "w")
+        f = open("C:\Users\Administrador\Desktop\Python\Matriz.txt", "w")
         f.write("digraph Matriz{ \n")
         f.write("node [fontcolor=\"blue\", height=0.5, color=\"gray\"]\n")
         f.write("[shape=box, style=filled]")
         f.write("rankdir=LR \n")
         f.write("edge  [color=\"black\", dir=fordware]\n")
-        derecha = self.listadominio.getPrimero()
+        derecha = self.ListaD.getPrimero()
         Actual = derecha
         contador = 1
         f.write("i[style =\"filled\"; label=\"i\";pos= \"0,0!\"] \n")
@@ -1110,7 +1110,7 @@ class Matriz(object):
         contador = 1
 
 
-        abajo = self.listaletra.getPrimero()
+        abajo = self.ListaL.getPrimero()
         Actual = abajo
 
         #Letras
@@ -1123,10 +1123,10 @@ class Matriz(object):
 
 
 
-        derecha = self.listadominio.getPrimero()
+        derecha = self.ListaD.getPrimero()
         actual = derecha
         while derecha != None:
-            abajo = self.listaletra.getPrimero()
+            abajo = self.ListaL.getPrimero()
             while abajo != None:
                 if actual.getAbajo() != None:
                     actual = actual.getAbajo()
@@ -1139,8 +1139,8 @@ class Matriz(object):
             derecha = derecha.getSiguiente()
             actual = derecha
 
-        derecha = self.listadominio.getPrimero()
-        abajo = self.listaletra.getPrimero()
+        derecha = self.ListaD.getPrimero()
+        abajo = self.ListaL.getPrimero()
         f.write("\n i->" + "\"" + derecha.getValor() + "\"" + "->i->" + abajo.getValor() + "->i;\n")
 
         first = True
@@ -1158,7 +1158,7 @@ class Matriz(object):
             Actual = derecha
         f.write(";")
 
-        izquierda = self.listadominio.getUltimo()
+        izquierda = self.ListaD.getUltimo()
 
         last = True
         Actual = izquierda
@@ -1191,7 +1191,7 @@ class Matriz(object):
 
 
         last = True
-        arriba = self.listaletra.getUltimo()
+        arriba = self.ListaL.getUltimo()
         Actual = arriba
         while arriba != None:
             if last == True:
@@ -1205,10 +1205,10 @@ class Matriz(object):
         f.write(";\n")
 
 
-        derecha = self.listadominio.getPrimero()
+        derecha = self.ListaD.getPrimero()
         actual = derecha
         while derecha != None:
-            abajo = self.listaletra.getPrimero()
+            abajo = self.ListaL.getPrimero()
             f.write("\"" + derecha.getValor() + "\"")
             while abajo != None:
                 if actual.getAbajo() != None:
@@ -1222,10 +1222,10 @@ class Matriz(object):
         f.write("\n\n\n")
 
 
-        abajo = self.listaletra.getPrimero()
+        abajo = self.ListaL.getPrimero()
         actual = abajo
         while abajo != None:
-            derecha = self.listadominio.getPrimero()
+            derecha = self.ListaD.getPrimero()
             f.write(abajo.getValor())
             while derecha != None:
                 if actual.getSiguiente() != None:
@@ -1238,7 +1238,7 @@ class Matriz(object):
 
         f.write("\n\n\n")
 
-        derecha = self.listadominio.getPrimero()
+        derecha = self.ListaD.getPrimero()
         aux = derecha
 
         while derecha != None:
@@ -1254,7 +1254,7 @@ class Matriz(object):
             derecha = derecha.getSiguiente()
             aux = derecha
 
-        abajo = self.listaletra.getPrimero()
+        abajo = self.ListaL.getPrimero()
         aux = abajo
 
         while abajo != None:
@@ -1271,11 +1271,11 @@ class Matriz(object):
             aux = abajo
 
         f.write("}")
-        subprocess.Popen("fdp -Tpng C:\graficas\Matriz.txt -o C:\graficas\Matriz.png")
+        subprocess.Popen("fdp -Tpng C:\Users\Administrador\Desktop\Python\Matriz.txt -o C:\Users\Administrador\Desktop\Python\Matriz.png")
 
     def posX(self, nodo):
         x = 1
-        derecha = self.listadominio.getPrimero()
+        derecha = self.ListaD.getPrimero()
 
         while derecha != None:
             if derecha.getValor() == nodo:
@@ -1287,7 +1287,7 @@ class Matriz(object):
     def posY(self, nodo):
 
         y = 1
-        abajo = self.listaletra.getPrimero()
+        abajo = self.ListaL.getPrimero()
         while abajo != None:
             if abajo.getValor() == nodo:
                 return y
@@ -1296,7 +1296,7 @@ class Matriz(object):
                 abajo = abajo.getAbajo()
 
     def Comparar(self, letra, dominio):
-        nodoAux = self.listadominio.buscar(dominio)
+        nodoAux = self.ListaD.buscar(dominio)
         while nodoAux != None:
             if nodoAux.getLetra() == letra:
                 return True
@@ -1339,7 +1339,7 @@ class Matriz(object):
             f.write(";\n")
 
 
-    def mandarCorreo(self, email):
+    def insertarCorreo(self, email):
         objeto = email.split("@")
         nombre = objeto[0]
 
@@ -1356,8 +1356,8 @@ class Matriz(object):
         self.EliminarCorreo(letra, dominio, nombre)
 
     def EliminarCorreo(self, letra, dominio, dato):
-        auxLetra = self.listaletra.buscar(letra)
-        auxDominio = self.listadominio.buscar(dominio)
+        auxLetra = self.ListaL.buscar(letra)
+        auxDominio = self.ListaD.buscar(dominio)
 
         if auxLetra != None and auxDominio != None:
             aux = auxDominio
@@ -1377,7 +1377,7 @@ class Matriz(object):
                             elif aux.getAbajo() == None:
                                 aux.getArriba().setAbajo(None)
                         elif self.Dominios() == 2:
-                            self.listadominio.eliminar(dominio)
+                            self.ListaD.eliminar(dominio)
 
                         if self.Letras() > 2:
                             if aux.getSiguiente() != None:
@@ -1386,16 +1386,16 @@ class Matriz(object):
                             elif aux.getSiguiente() == None:
                                 aux.getAnterior().setSiguiente(None)
                         elif self.Letras() == 2:
-                            self.listaletra.eliminar(letra)
+                            self.ListaL.eliminar(letra)
                     return True
                 else:
                     aux = aux.getAbajo()
             return False
 
-    #*********************************************************Recorridos
+
     def Dominios(self):
         contador = 0
-        aux = self.listadominio.getPrimero()
+        aux = self.ListaD.getPrimero()
         while aux != None:
             contador = contador + 1
             aux = aux.getAbajo()
@@ -1403,47 +1403,85 @@ class Matriz(object):
 
     def Letras(self):
         contador = 0
-        aux = self.listaletra.getPrimero()
+        aux = self.ListaL.getPrimero()
         while aux != None:
             contador = contador + 1
             aux = aux.getSiguiente()
         return contador
 
     def PorDominio(self, dominio):
-        derecha = self.listadominio.getPrimero()
+        derecha = self.ListaD.getPrimero()
         while derecha.getSiguiente() != None:
             print derecha.getValor()
             derecha.getSiguiente()
-
+#**************************************************Retornar Recorridos
     def MostrarDominios(self, nodo):
-                derecha = self.listadominio.getPrimero()
-                actual = derecha
-
-                while derecha != None:
-                    if derecha.getValor()==nodo:
-                        print derecha.getValor()
-                        abajo = self.listaletra.getPrimero()
+                aux = self.ListaD.getPrimero()
+                actual = aux
+                texto=""
+                while aux != None:
+                    if aux.getValor()==nodo:
+                        print aux.getValor()
+                        texto=texto+"<>"+str(aux.getValor())
+                        abajo = self.ListaL.getPrimero()
                         while abajo != None:
                             if actual.getAbajo() != None:
                                 actual = actual.getAbajo()
 
                                 print actual.getValor().getPrimero().getValor()
+                                texto=texto+"<>"+str(actual.getValor().getPrimero().getValor())
                                 lista=actual.getValor()
                                 auxiliar = lista.getPrimero()
                                 while auxiliar.getSiguiente() != None:
 
                                     auxiliar = auxiliar.getSiguiente()
                                     print auxiliar.getValor()
-
+                                    texto=texto+"<>"+str(auxiliar.getValor())
                             abajo = abajo.getAbajo()
                         print "____"
 
-                        derecha = derecha.getSiguiente()
-                        actual = derecha
+                        aux = aux.getSiguiente()
+                        actual = aux
                     else:
                        print("no se encontro")
-                       derecha = derecha.getSiguiente()
-                       actual = derecha
+                       aux = aux.getSiguiente()
+                       actual = aux
+                print  texto
+                return texto
+
+    def MostrarLetra(self,nodo):
+                aux = self.ListaL.getPrimero()
+                actual = aux
+                texto=""
+                while aux != None:
+                    if aux.getValor()==nodo:
+                        print aux.getValor()
+                        texto=texto+"<>"+str(aux.getValor())
+                        abajo = self.ListaL.getPrimero()
+                        while abajo != None:
+                            if actual.getSiguiente() != None:
+                                actual = actual.getSiguiente()
+
+                                print actual.getValor().getPrimero().getValor()
+                                texto=texto+"<>"+str(actual.getValor().getPrimero().getValor())
+                                lista=actual.getValor()
+                                auxiliar = lista.getPrimero()
+                                while auxiliar.getSiguiente() != None:
+
+                                    auxiliar = auxiliar.getSiguiente()
+                                    print auxiliar.getValor()
+                                    texto=texto+"<>"+str(auxiliar.getValor())
+                            abajo = abajo.getSiguiente()
+                        print "____"
+
+                        aux = aux.getAbajo()
+                        actual = aux
+                    else:
+                       print("no se encontro")
+                       aux = aux.getAbajo()
+                       actual = aux
+                print texto
+                return texto
 
 
 
@@ -1454,18 +1492,19 @@ class Matriz(object):
 
 
 matriz = Matriz()
-matriz.mandarCorreo("ana@gmail.com")
-matriz.mandarCorreo("maria@gmail.com")
-matriz.mandarCorreo("sol@gmail.com")
-matriz.mandarCorreo("carmen@mail.com")
-matriz.mandarCorreo("carol@mail.com")
-matriz.mandarCorreo("karina@mail.com")
-matriz.mandarCorreo("karla@mail.com")
+matriz.insertarCorreo("ana@gmail.com")
+matriz.insertarCorreo("maria@gmail.com")
+matriz.insertarCorreo("sol@gmail.com")
+matriz.insertarCorreo("carmen@mail.com")
+matriz.insertarCorreo("carol@mail.com")
+matriz.insertarCorreo("karina@mail.com")
+matriz.insertarCorreo("karla@mail.com")
 matriz.GraficarMatriz()
 matriz.eliminar("sol@gmail.com")
-matriz.mandarCorreo("maria2@gmail.com")
-matriz.mandarCorreo("maria3@gmail.com")
+matriz.insertarCorreo("maria2@gmail.com")
+matriz.insertarCorreo("maria3@gmail.com")
 matriz.MostrarDominios("mail.com")
+matriz.MostrarLetra("m")
 matriz.GraficarMatriz()
 
 
@@ -1534,15 +1573,35 @@ def SacarPila():
 @app.route('/AgregarMatriz', methods=['POST'])
 def AgregarMatriz():
     parametro = str(request.form['correo'])
-    matriz.mandarCorreo(str(parametro))
+    matriz.insertarCorreo(str(parametro))
     matriz.GraficarMatriz()
     return "Se Agrego a l Matriz>>>> " + str(parametro) + "!"
+
+@app.route('/EliminarMatriz', methods=['POST'])
+def EliminarMatriz():
+    parametro = str(request.form['correoE'])
+    ret=matriz.eliminar(parametro)
+    matriz.GraficarMatriz()
+    return "Se Elimino de la Matriz>>>> " + str(parametro) + "!"
+
+
+@app.route('/BuscarMatrizL', methods=['POST'])
+def BuscarMatrizL():
+    parametro = str(request.form['buscarL'])
+    ret=matriz.MostrarLetra(parametro)
+    if ret=="":
+        return "La Busque Por Letra no se Completo>>>"
+    else:
+        return "Busqueda Por Letra>>>> " + str(ret) + "!"
 
 @app.route('/BuscarMatrizD', methods=['POST'])
 def BuscarMatrizD():
     parametro = str(request.form['buscarD'])
-    ret=matriz.ReturnDominios()
-    return "Se Elimino de la Matriz>>>> " + str(ret) + "!"
+    ret=matriz.MostrarDominios(parametro)
+    if ret=="":
+        return "La Busque Por Dominio no se Completo>>>"
+    else:
+        return "Busqueda Por Dominio>>>> " + str(ret) + "!"
 
 @app.route("/")
 def hellof():
