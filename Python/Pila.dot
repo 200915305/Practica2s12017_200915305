@@ -1,0 +1,8 @@
+digraph Pila{
+label = "Pila"
+
+	Node0[label = "55"];
+	Node1[label = "1"];
+
+	Node0 -> Node1;
+}
