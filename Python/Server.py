@@ -1452,6 +1452,7 @@ class Matriz(object):
 
     def MostrarLetra(self,nodo):
                 aux = self.ListaL.getPrimero()
+                aux2=self.ListaD.getPrimero()
                 actual = aux
                 texto=""
                 while aux != None:
@@ -1465,15 +1466,16 @@ class Matriz(object):
                                 actual = actual.getSiguiente()
 
                                 print actual.getValor().getPrimero().getValor()
-                                texto=texto+"<>"+str(actual.getValor().getPrimero().getValor())
+                                texto=texto+"<>"+str(actual.getValor().getPrimero().getValor())+"@"+aux2.getValor()
                                 lista=actual.getValor()
                                 auxiliar = lista.getPrimero()
                                 while auxiliar.getSiguiente() != None:
 
                                     auxiliar = auxiliar.getSiguiente()
                                     print auxiliar.getValor()
-                                    texto=texto+"<>"+str(auxiliar.getValor())
+                                    texto=texto+"<>"+str(auxiliar.getValor())+"@"+aux2.getValor()
                             abajo = abajo.getSiguiente()
+                            aux2=aux2.getSiguiente()
                         print "____"
 
                         aux = aux.getAbajo()
@@ -1501,6 +1503,7 @@ matriz.insertarCorreo("carmen@hotmail.com")
 matriz.insertarCorreo("carol@hotmail.com")
 matriz.insertarCorreo("karina@hotmail.com")
 matriz.insertarCorreo("karla@hotmail.com")
+matriz.insertarCorreo("kaly@gmail.com")
 matriz.GraficarMatriz()
 matriz.eliminar("sol@gmail.com")
 matriz.insertarCorreo("maria2@gmail.com")
