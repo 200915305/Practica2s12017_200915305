@@ -1,10 +1,6 @@
 digraph ListaSimple{
 label = "Lista Simple"
 
-	Node0[label = "aaa"];
-	Node1[label = "aaassdd"];
-	Node2[label = "111"];
+	Node0[label = "a"];
 
-	Node0 -> Node1;
-	Node1 -> Node2;
 }

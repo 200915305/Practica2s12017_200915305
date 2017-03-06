@@ -1417,6 +1417,7 @@ class Matriz(object):
 #**************************************************Retornar Recorridos
     def MostrarDominios(self, nodo):
                 aux = self.ListaD.getPrimero()
+                dom=nodo
                 actual = aux
                 texto=""
                 while aux != None:
@@ -1429,14 +1430,14 @@ class Matriz(object):
                                 actual = actual.getAbajo()
 
                                 print actual.getValor().getPrimero().getValor()
-                                texto=texto+"<>"+str(actual.getValor().getPrimero().getValor())
+                                texto=texto+"<>"+str(actual.getValor().getPrimero().getValor())+"@"+dom
                                 lista=actual.getValor()
                                 auxiliar = lista.getPrimero()
                                 while auxiliar.getSiguiente() != None:
 
                                     auxiliar = auxiliar.getSiguiente()
                                     print auxiliar.getValor()
-                                    texto=texto+"<>"+str(auxiliar.getValor())
+                                    texto=texto+"<>"+str(auxiliar.getValor())+"@"+dom
                             abajo = abajo.getAbajo()
                         print "____"
 
@@ -1455,6 +1456,7 @@ class Matriz(object):
                 texto=""
                 while aux != None:
                     if aux.getValor()==nodo:
+
                         print aux.getValor()
                         texto=texto+"<>"+str(aux.getValor())
                         abajo = self.ListaL.getPrimero()
@@ -1495,15 +1497,15 @@ matriz = Matriz()
 matriz.insertarCorreo("ana@gmail.com")
 matriz.insertarCorreo("maria@gmail.com")
 matriz.insertarCorreo("sol@gmail.com")
-matriz.insertarCorreo("carmen@mail.com")
-matriz.insertarCorreo("carol@mail.com")
-matriz.insertarCorreo("karina@mail.com")
-matriz.insertarCorreo("karla@mail.com")
+matriz.insertarCorreo("carmen@hotmail.com")
+matriz.insertarCorreo("carol@hotmail.com")
+matriz.insertarCorreo("karina@hotmail.com")
+matriz.insertarCorreo("karla@hotmail.com")
 matriz.GraficarMatriz()
 matriz.eliminar("sol@gmail.com")
 matriz.insertarCorreo("maria2@gmail.com")
 matriz.insertarCorreo("maria3@gmail.com")
-matriz.MostrarDominios("mail.com")
+matriz.MostrarDominios("gmail.com")
 matriz.MostrarLetra("m")
 matriz.GraficarMatriz()
 

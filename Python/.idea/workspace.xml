@@ -24,8 +24,8 @@
       <file leaf-file-name="Server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1913">
-              <caret line="1602" column="9" lean-forward="false" selection-start-line="1602" selection-start-column="9" selection-end-line="1602" selection-end-column="9" />
+            <state relative-caret-position="424">
+              <caret line="1505" column="32" lean-forward="true" selection-start-line="1505" selection-start-column="32" selection-end-line="1505" selection-end-column="32" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -106,6 +106,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -121,7 +122,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -394,7 +394,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22767857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -454,48 +454,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Dominios.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoDominio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Letras.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Matriz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoLetra.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoMatriz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Dominios.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoDominio.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Letras.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Matriz.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoLetra.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoMatriz.py" />
     <entry file="file://$PROJECT_DIR$/Server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -658,77 +622,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201404218-master/Python - Practica 2/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="27" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201404218-master/Python - Practica 2/Main.py" />
     <entry file="file://$PROJECT_DIR$/../Server.py" />
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_200915305/Python/Server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoMatriz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoLetra.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="59" column="31" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="59" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/ListaNombres.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" column="50" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="123" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Letras.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="130" column="46" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="130" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Practica2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Dominios.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoDominio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Matriz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_200915305/Python/Server.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoMatriz.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoLetra.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/ListaNombres.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Letras.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Practica2.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Dominios.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/NodoDominio.py" />
+    <entry file="file://$PROJECT_DIR$/../Practica2s12017_201408580-master/Matriz.py" />
     <entry file="file://C:/Python27/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -736,17 +640,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ejemplo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../ejemplo.py" />
     <entry file="file://$PROJECT_DIR$/Server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1913">
-          <caret line="1602" column="9" lean-forward="false" selection-start-line="1602" selection-start-column="9" selection-end-line="1602" selection-end-column="9" />
+        <state relative-caret-position="424">
+          <caret line="1505" column="32" lean-forward="true" selection-start-line="1505" selection-start-column="32" selection-end-line="1505" selection-end-column="32" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
